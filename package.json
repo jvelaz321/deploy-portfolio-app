@@ -1,5 +1,30 @@
 {
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "http-errors": "^2.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "name": "portfolio_website",
+  "version": "1.0.0",
+  "description": "A website to showcase cool things made by me",
+  "main": "app.js",
+  "devDependencies": {
     "express": "^4.17.2"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiceDaddy321/deploy-portfolio-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RiceDaddy321/deploy-portfolio-app/issues"
+  },
+  "homepage": "https://github.com/RiceDaddy321/deploy-portfolio-app#readme"
 }
