@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/dogAPIStyles.css" type="text/css">
+    <title>Juan's Dogs</title>
+</head>
+<body>
+    <!-- The header -->
+    <nav class="header">
+        <div class="header__container">
+            <h1 class="greeting">Welcome!</h1>
+            <h3 class="greeting__text">Would you like to search for a dog or let fate decide?</h1>
+            </div>
+        </nav>
+        
+        <!-- The two choices -->
+        <nav class="choose">
+            <form class="buttons" method="get">
+                <input type="submit" formaction="/about/independent" value="Let Me Decide" class="independent button" disabled>
+                <input type="submit" formaction="/about/random" value="Let Fate Decide" class="random button">
+            </form>
+        </nav>
+
+        <div class="dog">
+            <nav class="dogimg">
+                <img src="<%=JSON.parse(data)[0].url%>" alt="" id="dogimg" height="20%" width="20%">
+            </nav>
+            <h1 class="dogName" id="name">
+                <script type="text/javascript">
+                    var information = <%-data%>;
+                    
+                    //check that breeds isn't empty
+                    if(information[0].breeds.length != 0)
+                    document.querySelector(".dogName").innerHTML = information[0].breeds[0].name;
+                    else
+                    document.querySelector(".dogName").innerHTML = "No Breed";
+                    </script>
+                </h1>
+                <h1 class="info">Cool info:</h1>
+            <nav class="dogDetails">
+                <%let info = JSON.parse(data)[0].breeds[0];%>
+                <%for(let k in info) {%>
+                    <%if(k == "name") continue;%>
+                    <div class="breed_props">
+                        <h2 class="category">
+                            <%=k.split('_').join(' ').charAt(0).toUpperCase() + k.split('_').join(' ').slice(1);%>: 
+                        </h2>
+                        <!--check if the thing is a json-->
+                        <%if(info[k].constructor == ({}).constructor) { %>
+                            <%for(let kJS in info[k]) {%>
+                                <h4 class="category_value">
+                                    <%=info[k][kJS]%>
+                                </h4>
+                            <% } %>
+                        <% } else {%>
+                            <h4 class="category_value">
+                                <%= info[k]%>
+                            </h4>
+                        <% } %>
+                        </div>
+                <% } %>
+            </nav>
+        </div>
+        
+        <!-- Use the api to call for a thing -->
+        <nav id="mytext"></nav>
+        <script type="text/javascript" src="app.js"></script>
+    
+</body>
+</html>

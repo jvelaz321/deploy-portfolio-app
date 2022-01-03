@@ -1,10 +1,15 @@
 {
   "dependencies": {
+    "axiom": "^0.1.6",
+    "axios": "^0.24.0",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "http-errors": "^2.0.0",
-    "nodemon": "^2.0.15"
+    "jquery": "^3.6.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "parcel": "^2.0.1"
   },
   "name": "portfolio_website",
   "version": "1.0.0",

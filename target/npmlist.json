@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"portfolio_website","dependencies":{"axiom":{"version":"0.1.6"},"axios":{"version":"0.24.0"},"cookie-parser":{"version":"1.4.6"},"ejs":{"version":"3.1.6"},"http-errors":{"version":"2.0.0"},"jquery":{"version":"3.6.0"},"morgan":{"version":"1.10.0"},"nodemon":{"version":"2.0.15"},"parcel":{"version":"2.0.1"}}}

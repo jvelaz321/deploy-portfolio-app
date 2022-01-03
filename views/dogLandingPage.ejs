@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/dogAPIStyles.css" type="text/css">
+    <title>Juan's Dogs</title>
+</head>
+<body>
+    <!-- The header -->
+    <nav class="header">
+        <div class="header__container">
+            <h1 class="greeting">Welcome!</h1>
+            <h3 class="greeting__text">Would you like to search for a dog or let fate decide?</h1>
+            </div>
+        </nav>
+        
+        <!-- The two choices -->
+        <nav class="choose">
+            <form class="buttons" method="get">
+                <input type="submit" formaction="/about/independent" value="Let Me Decide" class="independent button" disabled>
+                <input type="submit" formaction="/about/random" value="Let Fate Decide" class="random button">
+            </form>
+        </nav>
+        
+        <!-- Use the api to call for a thing -->
+        <nav id="mytext"></nav>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="/javascripts/buttons.js"></script>
+    
+</body>
+</html>
