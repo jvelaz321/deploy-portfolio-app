@@ -6,5 +6,23 @@ router.get('/', function (req, res) {
     console.log('Home paged accessed by: TK'); //debugging
 });
 
+router.get('/about', function(req, res)
+{
+    res.render('aboutPage');
+    console.log('About page accessed by: TK');
+});
+
+router.get('/projects', function(req, res)
+{
+    res.render('projectsPage');
+    console.log('projects page has been accessed');
+});
+
+router.get('/contacts', function(req, res)
+{
+    res.render('contactsPage');
+    console.log('contacts page has been accessed');
+});
+
 //send the router
 module.exports = router;

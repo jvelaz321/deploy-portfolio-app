@@ -1,0 +1,32 @@
+.blackbar {
+    align-items: center;
+    justify-content: space-between;
+    display: inline-flex;
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: 0.25rem;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+}
+
+.headlinks {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 22px;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+}
+.logo {
+    
+
+}
+.navlink {
+    
+}

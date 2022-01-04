@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 3000;
 
 //use routers
 app.use("/", homeRouter);
-app.use('/about', dogRouter);
+app.use('/projects/dogapi', dogRouter);
 
 /* // catch 404 and forward to error handler
 app.use(function(req, res, next) {
