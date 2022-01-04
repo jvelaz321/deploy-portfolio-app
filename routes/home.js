@@ -8,19 +8,19 @@ router.get('/', function (req, res) {
 
 router.get('/about', function(req, res)
 {
-    res.render('aboutPage');
+    res.render('./header/aboutPage');
     console.log('About page accessed by: TK');
 });
 
 router.get('/projects', function(req, res)
 {
-    res.render('projectsPage');
+    res.render('./header/projectsPage');
     console.log('projects page has been accessed');
 });
 
 router.get('/contacts', function(req, res)
 {
-    res.render('contactsPage');
+    res.render('./header/contactsPage');
     console.log('contacts page has been accessed');
 });
 

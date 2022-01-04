@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('dogLandingPage', { title: 'Express' });
+  res.render('./dogapi/dogLandingPage', { title: 'Express' });
 });
 
 //get that random image from axios
@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 router.get('/random', function(req, res) {
   axios.get("https://api.thedogapi.com/v1/images/search")
   .then(function (response) {
-    res.render('dogRandom', {data : JSON.stringify(response.data), raw : response.data});
+    res.render('./dogapi/dogRandom', {data : JSON.stringify(response.data), raw : response.data});
   });
 });
 
@@ -21,7 +21,7 @@ router.get('/random', function(req, res) {
 router.get('/independent', function(req, res) {
   axios.get("https://api.thedogapi.com/v1/images/search")
   .then(function (response) {
-    res.render('dogIndependent', {data : JSON.stringify(response.data), raw : response.data});
+    res.render('./dogapi/dogIndependent', {data : JSON.stringify(response.data), raw : response.data});
   });
 });
 

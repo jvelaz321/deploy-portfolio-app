@@ -10,7 +10,17 @@
 </head>
 <body>
     <!-- The header -->
-    <nav class="header">
+    <div class="blackbar">
+        <!--Logo-->
+        <img src="/images/logo.png" alt="JV" class="logo">
+        <!--links-->
+        <nav class="headlinks">
+            <a href="/about" class="navlink aboutlink">About Me</a>
+            <a href="/projects" class="navlink projectslink">Projects</a>
+            <a href="/contacts" class="navlink contactslink">Social Platforms</a>
+        </nav>
+    </div>
+    <nav>
         <div class="header__container">
             <h1 class="greeting">Welcome!</h1>
             <h3 class="greeting__text">Would you like to search for a dog or let fate decide?</h1>
@@ -24,8 +34,6 @@
                 <input type="submit" formaction="/projects/dogapi/random" value="Let Fate Decide" class="random button">
             </form>
         </nav>
-
-        
 
         <div class="dog">
             <nav class="dogimg">

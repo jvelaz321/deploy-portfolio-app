@@ -11,8 +11,17 @@
     flex-wrap: nowrap;
     flex-direction: row;
     align-content: center;
+    
+    position: sticky;
+    top: 0px;
 }
-
+body {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 .headlinks {
     display: inline-flex;
     flex-direction: row;
