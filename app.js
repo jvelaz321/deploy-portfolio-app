@@ -33,6 +33,8 @@ app.use(function(req, res, next) {
     next(createError(404));
 });  */ 
 
+//to add the header code to every pages
+
 app.get("/test", (req,res) => {
     //res.send("Welcome to the test page");
     console.log("test page reached")
@@ -40,5 +42,5 @@ app.get("/test", (req,res) => {
 });
 
 app.listen(PORT, () => {
-    console.log("App up at port " + PORT);
+    console.log('Node app is running on port', app.get('port'));
 });

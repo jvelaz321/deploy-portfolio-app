@@ -7,16 +7,16 @@
     width: 100%;
     padding: 1rem;
     padding-bottom: 0.25rem;
-    overflow: hidden;
     flex-wrap: nowrap;
     flex-direction: row;
     align-content: center;
     
     position: sticky;
     top: 0px;
+    overflow-x:hidden 
 }
 body {
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
