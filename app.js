@@ -22,7 +22,7 @@ function requireHTTPS(req, res, next) {
 //use middleware
 app.use(express.json()); //body parser
 app.use(express.urlencoded({extended: true})); //for parsing application/x-www-form-urlencoded
-app.use(requireHTTPS);
+//app.use(requireHTTPS);
 
 //set up view engine
 app.set('views', path.join(__dirname, 'views'));
