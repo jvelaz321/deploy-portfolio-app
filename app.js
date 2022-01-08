@@ -11,9 +11,18 @@ const app = express();
 var homeRouter = require("./routes/home");
 var dogRouter = require("./routes/dogAPI");
 
+//make middleware
+function requireHTTPS(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== "development") {
+      return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
+  }
 //use middleware
 app.use(express.json()); //body parser
 app.use(express.urlencoded({extended: true})); //for parsing application/x-www-form-urlencoded
+app.use(requireHTTPS);
 
 //set up view engine
 app.set('views', path.join(__dirname, 'views'));
