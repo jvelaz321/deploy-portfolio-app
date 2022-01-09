@@ -39,15 +39,10 @@ function requireHTTPS(req, res, next) {
   var port = normalizePort(process.env.PORT || '3000');
   app.set('port', port);
   
-  //force ssl
-  app.configure(function () {      
-    if (env === 'production') {
-      app.use(requireHTTPS);
-    }
-    
-    // other configurations etc for express go here...
-  });
-
+  //force ssl     
+  if (env === 'production') {
+    app.use(requireHTTPS);
+  }
 //   /* Redirect http to https */
 // app.get("*", function (req, res, next) {
 
