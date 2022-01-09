@@ -1,4 +1,5 @@
-const express = require("express");
+const express = require("express"),
+env = process.env.NODE_ENV || 'development';
 var http = require('http');
 const path = require("path");
 const createError = require("http-errors");
@@ -14,50 +15,71 @@ var dogRouter = require("./routes/dogAPI");
 //make middleware
 function requireHTTPS(req, res, next) {
     // The 'x-forwarded-proto' check is for Heroku
-    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== "development") {
-      return res.redirect('https://' + req.get('host') + req.url);
-    }
-    next();
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      return res.redirect(['https://', req.get('Host'), req.url].join(''));
   }
-//use middleware
-app.use(express.json()); //body parser
-app.use(express.urlencoded({extended: true})); //for parsing application/x-www-form-urlencoded
-//app.use(requireHTTPS);
+  return next();
+  }
 
-//set up view engine
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+  //use middleware
+  app.use(express.json()); //body parser
+  app.use(express.urlencoded({extended: true})); //for parsing application/x-www-form-urlencoded
+  
+  //set up view engine
+  app.set('views', path.join(__dirname, 'views'));
+  app.set('view engine', 'ejs');
+  
+  //set default path
+  app.use(express.static(path.join(__dirname, 'public')));
+  
+  /**
+   * Get port from environment and store in Express.
+   */
+  
+  var port = normalizePort(process.env.PORT || '3000');
+  app.set('port', port);
+  
+  //force ssl
+  app.configure(function () {      
+    if (env === 'production') {
+      app.use(requireHTTPS);
+    }
+    
+    // other configurations etc for express go here...
+  });
 
-//set default path
-app.use(express.static(path.join(__dirname, 'public')));
+//   /* Redirect http to https */
+// app.get("*", function (req, res, next) {
 
-/**
- * Get port from environment and store in Express.
- */
- var port = normalizePort(process.env.PORT || '3000');
- app.set('port', port);
+//   if ("https" !== req.headers["x-forwarded-proto"] && "production" === process.env.NODE_ENV) {
+//       res.redirect("https://" + req.hostname + req.url);
+//   } else {
+//       // Continue to other routes if we're not redirecting
+//       next();
+//   }
 
- /**
- * Create HTTP server.
- */
+// });
 
-var server = http.createServer(app);
-
-//use routers
-app.use("/", homeRouter);
-app.use('/projects/dogapi', dogRouter);
-
-/* // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+  /**
+   * Create HTTP server.
+   */
+  var server = http.createServer(app);
+  
+  //use routers
+  app.use("/", homeRouter);
+  app.use('/projects/dogapi', dogRouter);
+  
+  /* // catch 404 and forward to error handler
+  app.use(function(req, res, next) {
     next(createError(404));
-});  */ 
-
-//to add the header code to every pages
-
+  });  */ 
+  
+  //to add the header code to every pages
+  
 app.get("/test", (req,res) => {
-    //res.send("Welcome to the test page");
-    console.log("test page reached")
-    res.redirect('/');
+  //res.send("Welcome to the test page");
+  console.log("test page reached")
+  res.redirect('/');
 });
 
 /**
