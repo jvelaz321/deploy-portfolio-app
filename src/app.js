@@ -9,8 +9,8 @@ const createError = require("http-errors");
 const app = express();
 
 //routers
-var homeRouter = require("./routes/home");
-var dogRouter = require("./routes/dogAPI");
+var homeRouter = require(path.join(__dirname, '../routes/home'));
+var dogRouter = require(path.join(__dirname, "../routes/dogAPI"));
 
 //make middleware
 function requireHTTPS(req, res, next) {
@@ -26,11 +26,11 @@ function requireHTTPS(req, res, next) {
   app.use(express.urlencoded({extended: true})); //for parsing application/x-www-form-urlencoded
   
   //set up view engine
-  app.set('views', path.join(__dirname, 'views'));
+  app.set('views', path.join(__dirname, '../views'));
   app.set('view engine', 'ejs');
   
   //set default path
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, '../public')));
   
   /**
    * Get port from environment and store in Express.
