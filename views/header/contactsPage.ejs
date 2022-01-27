@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css">
-    <link rel="stylesheet" href="/stylesheets/header.css" type="text/css">
-    <title>
-        Contacts
-    </title>
+    <%- include('../templates/head.ejs')%>
 </head>
-    <body>
-        <!--black bar at the top-->
-        <div class="blackbar">
-            <!--links-->
-            <nav class="headlinks">
-                <a href="https://www.jvelaz.com"  class="navlink aboutlink">
-                    <img src="/images/logo.png" alt="JV" class="logo">
-                </a>
-                <a href="/about" class="navlink aboutlink">About Me</a>
-                <a href="/projects" class="navlink projectslink">Projects</a>
-                <a href="/contacts" class="navlink contactslink">Social Platforms</a>
-            </nav>
-        </div>
-        <h1 class="title">Contacts Page Under Construction</h1>
-    </body>
+<header>
+    <%- include('../templates/header.ejs')%>
+</header>
+<body>
+    <h1 class="title">I'm flattered that you care so much, so here is how you can get a hold of me:</h1>
+        <ul class="contacts">
+            <li class="contact">E-mail: 
+                <a href="mailto:juan.velazquez03@utrgv.edu?Subject=Hello Juan" class="contact_link">juan.velazquez03@utrgv.edu</a>
+            </li>
+            <li class="contact"> 
+                <a href="https://github.com/RiceDaddy321" target="_blank" class="contact_link">GitHub</a>
+            </li>
+            <li class="contact"> 
+                <a href="https://www.facebook.com/profile.php?id=100061225808619" target="_blank" class="contact_link">Facebook</a>
+            </li>
+            <li class="contact"> 
+                <a href="www.linkedin.com/in/JC-velazquez" target="_blank" class="contact_link">LinkedIn</a>
+                (Mind you that I don't use this as often as I should, so it's a bit dry right now :(.)
+            </li>
+            <li class="contact"> 
+                <a href="https://github.com/RiceDaddy321" target="_blank" class="contact_link">GitHub</a>
+            </li>
+            <li class="contact"> 
+                <a href="https://utrgv.joinhandshake.com/stu/users/31851884" target="_blank" class="contact_link">HandShake</a>
+                (This is one is updated Ironically.)
+            </li>
+        </ul>
+</body>
+<footer>
+    <%- include('../templates/footer.ejs')%>
+</footer>
 </html>

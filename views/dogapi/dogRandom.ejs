@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/dogAPIStyles.css" type="text/css">
-    <link rel="stylesheet" href="/stylesheets/header.css" type="text/css">
-    <title>Juan's Dogs</title>
+    <%- include('../templates/dogHead.ejs')%>
 </head>
+<header>
+    <%- include('../templates/header.ejs')%>
+</header>
 <body>
-    <!--black bar at the top-->
-    <div class="blackbar">
-        <!--links-->
-        <nav class="headlinks">
-            <a href="https://www.jvelaz.com"  class="navlink aboutlink">
-                <img src="/images/logo.png" alt="JV" class="logo">
-            </a>
-            <a href="/about" class="navlink aboutlink">About Me</a>
-            <a href="/projects" class="navlink projectslink">Projects</a>
-            <a href="/contacts" class="navlink contactslink">Social Platforms</a>
-        </nav>
-    </div>
     <nav>
         <div class="header__container">
             <h1 class="greeting">Welcome!</h1>
@@ -31,7 +17,7 @@
         <!-- The two choices -->
         <nav class="choose">
             <form class="buttons" method="get">
-                <input type="submit" formaction="/projects/dogapi/independent" value="Let Me Decide" class="independent button" disabled>
+                <!-- <input type="submit" formaction="/projects/dogapi/independent" value="Let Me Decide" class="independent button" disabled> -->
                 <input type="submit" formaction="/projects/dogapi/random" value="Let Fate Decide" class="random button">
             </form>
         </nav>
@@ -82,4 +68,7 @@
         <script type="text/javascript" src="app.js"></script>
     
 </body>
+<footer>
+    <%- include('../templates/footer.ejs')%>
+</footer>
 </html>
