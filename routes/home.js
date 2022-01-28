@@ -1,5 +1,6 @@
 const express = require('express');
-const axios = require('axios')
+const axios = require('axios');
+const { json } = require('express');
 var router = express.Router();
 
 //returns a json
@@ -26,7 +27,6 @@ async function getCommits(){
         , "date": date
         , "sha": sha 
         , "link": link};
-        console.log(json_data.sha);
         return JSON.stringify(json_data);
     });
 }
@@ -34,10 +34,9 @@ async function getCommits(){
 router.get(['/', '/home'], function (req, res) {
     //get all of the json_data
     getCommits().then(function(json_data_response) {
-        
-        res.render('homePage', JSON.parse(json_data_response));
-    }).catch(function(err) {
-        res.render('homePage');
+        res.render('homePage', JSON.parse(json_data_response), );
+    }).catch(function(err, html) {
+        res.render('homePage', {author: null, errHtml: err});
     });
     
 });

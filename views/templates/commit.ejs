@@ -1,13 +1,20 @@
 <div class="changelog" style="max-width: 20%; max-height: 30%; display: inline-table; align-items: center;">    
-    <h1 class="changelog_title" style="justify-content: center;">Changelog:</h1>   
-    <%  var len = Object.keys(author).length;%>
-    <%for(let i = 0; i < len; i++) {%>
-        <ul class="changelog_ul">
-            <li class="changelog_li">Author: Juan Velazquez</li>
-            <li class="changelog_li">message: <%= message[i]%></li>
-            <li class="changelog_li">date: <%= date[i]%></li>
-            <li class="changelog_li">sha: 
-                <a href="<%=link[i]%>" target="_blank" class="link"><%= sha[i]%></li></a>
-        </ul>
+    <h1 class="changelog_title title" style="justify-content: center;">Changelog:</h1>
+    <%if(author != null) {%>
+        <%var len = Object.keys(author).length;%>
+        <%for(let i = 0; i < len; i++) {%>
+            <ul class="changelog_ul">
+                <li class="changelog_li">Author: Juan Velazquez</li>
+                <li class="changelog_li">message: <%= message[i]%></li>
+                <li class="changelog_li">date: <%= date[i]%></li>
+                <li class="changelog_li">sha: 
+                    <a href="<%=link[i]%>" target="_blank" class="link"><%= sha[i]%></li></a>
+            </ul>
+        <% } %>
+    <% } else { %>
+        <h2 class="changelog_error_title title">Something went wrong... could not fetch latest changes.</h2>
+        <span class="changelog_error_body" style="padding-top: 10px;">
+            <%=errHtml%>
+        </span>
     <% } %>
 </div>

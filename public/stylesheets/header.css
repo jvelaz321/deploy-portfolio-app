@@ -1,44 +1,54 @@
 .blackbar {
-    align-items: center;
-    justify-content: space-between;
-    display: inline-flex;
-    background-color: black;
-    color: white;
-    width: 100%;
-    padding: 1rem;
-    padding-bottom: 0.25rem;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-content: center;
-    
-    position: sticky;
-    top: 0px;
-    overflow-x:hidden 
+    max-width: fit-content;
 }
-body {
-    margin: 0;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
+
+.headlinks a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.5rem 3rem;
+    text-decoration: none;
+    font-size: 17px;
 }
 .headlinks {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    margin-bottom: 2rem;
+    width: 100%;
     display: inline-flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    font-size: 22px;
-    flex-wrap: wrap;
-    width: 100%;
-    overflow: hidden;
+    justify-content: center;
 }
 a {color:#00FF00;}         /* Unvisited link  */
 a:visited {color:#00FF00;} /* Visited link    */
 a:hover {color:#FF0000;}   /* Mouse over link */
 a:active {color:#0000FF;}
+
+.title {
+    font-size: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
 .logo {
     
 
+}
+
+.homelink {
+    
+    padding-left: 0.5rem !important;
+    padding-bottom: 0.25rem !important;
+    padding-top: 0.25rem !important;
+
+    position: fixed;
+    left: 0;
 }
 .navlink {
     
